@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-12 col-sm-8 col-md-6 mx-auto">
+        <p class="text-center heading-color mt-5">Add Product</p>
+        <!-- <img src="../../assets/images/login.png" width="150px" alt="login image" class="d-block mx-auto mt-5"> -->
+        <!--Invalid credentials-->
+        <h5 *ngIf="errStatus" class="text-center m-3">{{errMsg}}</h5>
+       <form class="my-4" [formGroup]="productFormInfo" (ngSubmit)="onFormSubmit()">
+           <div class="form-floating mb-3 mt-5">
+               <input type="text" formControlName="productid" class="form-control" id="floatingId" placeholder="enter your productid">
+               <label for="floatingId">ProductId</label>
+           </div>
+        <div class="form-floating mb-3">
+            <input type="text" formControlName="productname" class="form-control" id="floatingname" placeholder="enter your productname">
+            <label for="floatingname">ProductName</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" formControlName="price" class="form-control" id="floatingprice" placeholder="enter your price">
+            <label for="floatingprice">Price</label>
+        </div>
+        <div class="mb-3">
+            <label>City</label>
+            <textarea formControlName="description" class="form-control"  cols="30" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+            <input type="file" formControlName="productimg" class="form-control" id="floatingPic" placeholder="select the image" (change)="onFileSelect($event)">
+        </div>
+       <button type="submit" class="btn btn-success d-block mx-auto">AddProduct</button>
+       </form> 
+    </div>
+</div>

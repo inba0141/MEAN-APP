@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-12 col-sm-8 col-md-6 mx-auto">
+        <p class="text-center heading-color mt-5">SignUp Here</p>
+        <!-- <img src="../../assets/images/login.png" width="150px" alt="login image" class="d-block mx-auto mt-5"> -->
+        <!--Invalid credentials-->
+        <h5 *ngIf="errStatus" class="text-center m-3">{{errMsg}}</h5>
+       <form class="my-4" [formGroup]="userFormInfo" (ngSubmit)="onFormSubmit()">
+           <div class="form-floating mb-3 mt-5">
+               <input type="text" formControlName="username" class="form-control" id="floatingInput" placeholder="enter your name">
+               <label for="floatingInput">Username</label>
+           </div>
+        <div class="form-floating mb-3">
+            <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="enter your password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" formControlName="email" class="form-control" id="floatingEmail" placeholder="enter your email">
+            <label for="floatingEmail">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="city" formControlName="city" class="form-control" id="floatingCity" placeholder="enter your city">
+            <label for="floatingCity">City</label>
+        </div>
+        <div class="mb-3">
+            <input type="file" formControlName="profilePic" class="form-control" id="floatingPic" placeholder="select the image" (change)="onFileSelect($event)">
+        </div>
+       <button type="submit" class="btn btn-success d-block mx-auto">Signup</button>
+       </form> 
+    </div>
+</div>
